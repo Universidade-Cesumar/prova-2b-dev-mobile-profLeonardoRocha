@@ -10,7 +10,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
 
-      {/* Inputs com os testIDs exigidos na Sprint 1 */}
+      {/* Sprint 1: Componentes Estruturais */}
       <TextInput 
         testID="input-nome" 
         style={styles.input}
@@ -28,12 +28,10 @@ export default function App() {
         keyboardType="numeric"
       />
 
-      {/* Botão com o testID da Sprint 1 */}
       <TouchableOpacity testID="btn-cadastrar" style={styles.button}>
-        <Text>Cadastrar</Text>
+        <Text style={{ color: '#fff', fontWeight: 'bold' }}>Cadastrar</Text>
       </TouchableOpacity>
       
-      {/* Lista com o testID da Sprint 1 */}
       <FlatList 
         testID="lista-materials"
         data={materiais}
@@ -45,8 +43,8 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, paddingTop: 50 },
+  container: { flex: 1, padding: 20, paddingTop: 50, backgroundColor: '#fff' },
   title: { fontSize: 20, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
   input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 10, borderRadius: 5 },
-  button: { backgroundColor: '#00dd00', padding: 15, alignItems: 'center', borderRadius: 5 }
+  button: { backgroundColor: '#007bff', padding: 15, alignItems: 'center', borderRadius: 5 }
 });
