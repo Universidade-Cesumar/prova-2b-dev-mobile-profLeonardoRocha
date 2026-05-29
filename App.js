@@ -8,7 +8,7 @@ export default function App() {
   const [nome, setNome] = useState('');
   const [quantidade, setQuantidade] = useState('');
   const [busca, setBusca] = useState('');
-  
+
   // Massa de dados inicial para a FlatList e busca funcionarem
   const [materiais, setMateriais] = useState([
     { id: '1', nome: 'Luva de Látex', quantidade: 50 },
@@ -44,16 +44,16 @@ export default function App() {
 
       {/* SPRINT 1: Cadastro de Materiais */}
       <View style={styles.card}>
-        <TextInput 
-          testID="input-nome" 
+        <TextInput
+          testID="input-nome"
           style={styles.input}
           placeholder="Nome do Material"
           value={nome}
           onChangeText={setNome}
         />
 
-        <TextInput 
-          testID="input-quantidade" 
+        <TextInput
+          testID="input-quantidade"
           style={styles.input}
           placeholder="Quantidade Inicial"
           value={quantidade}
@@ -67,8 +67,8 @@ export default function App() {
       </View>
 
       {/* SPRINT 3: Filtro de Busca Dinâmica */}
-      <TextInput 
-        testID="input-busca" 
+      <TextInput
+        testID="input-busca"
         style={styles.inputBusca}
         placeholder="🔍 Buscar insumo (ex: Luva)..."
         value={busca}
@@ -77,18 +77,23 @@ export default function App() {
 
       {/* SPRINT 3: Painel de Indicadores / Totalizadores */}
       <View style={styles.rowIndicadores}>
+
+        {/* Card de Itens Diferentes */}
         <View style={styles.cardIndicador}>
           <Text style={styles.txtIndicador}>Tipos de Insumo</Text>
-          <Text style={styles.numIndicador}>{totalItensDiferentes}</Text>
+          <Text testID="total-itens" style={styles.numIndicador}>{totalItensDiferentes}</Text>
         </View>
+
+        {/* Card de Total de Unidades */}
         <View style={styles.cardIndicador}>
           <Text style={styles.txtIndicador}>Total Unidades</Text>
-          <Text style={styles.numIndicador}>{totalUnidades}</Text>
+          <Text testID="total-unidades" style={styles.numIndicador}>{totalUnidades}</Text>
         </View>
+
       </View>
 
       {/* SPRINT 1: Listagem dos Materiais */}
-      <FlatList 
+      <FlatList
         testID="lista-materials"
         data={materiaisFiltrados}
         keyExtractor={item => item.id}
